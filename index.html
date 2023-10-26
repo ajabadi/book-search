@@ -14,20 +14,32 @@
 </head>
 
 <body>
-    <!--materialize class container uses grid to center the contents-->
-    <div class="container">
-        <h2>Find Your Favorite Book</h2>
-        <!--for when we get the quote from the api we can dynamicially add it here from our js-->
-        <p id ="quote-placement"></p>
-        <!--input field where the user will search for a book-->
-        <input placeholder="The Fellowship of the Ring...">
-        <!--materialize classes add the styling to the button-->
-        <button class="btn waves-effect waves-light" type="submit" name="action">Search
-            <!--icon on the button-->
-            <i class="material-icons right">send</i>
-        </button>
+    <!--hero section and overlay classes to style the hero image with css-->
+    <div class="hero-section">
+        <div class="hero-overlay">
+            <!--materialize class container uses grid to center the contents-->
+            <div class="hero-content container">
+                <h2>Find Your Favorite Book</h2>
+                <!--for when we get the quote from the api we can dynamicially add it here from our js-->
+                <div class="quote-container">
+                    <!--quotee will go here-->
+                    <p id ="quote-placement">"Not all who wander are lost"</p>
+                    <!--author of the quote will go here-->
+                    <p id ="quote-author">-J.R.R. Tolkien</p>
+                </div>
+                <!--form for the user input field-->
+                <form id="search-form">
+                    <!--input field where the user will search for a book-->
+                    <input id="book-input-field" placeholder="The Fellowship of the Ring...">
+                    <!--materialize classes add the styling to the button-->
+                    <button id="search-btn"class="btn waves-effect waves-light" type="submit" name="action">Search
+                        <!--icon on the button-->
+                        <i class="material-icons right">send</i>
+                    </button>
+                </form>
+            </div>
+        </div>
     </div>
-           
     <!--CDN link for the materialize js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
     <!--link to custom javascript-->
