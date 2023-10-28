@@ -32,5 +32,30 @@ function searchBooks(input) {
     .then(function(data) {
         //Check the console to see what kind of information we get back
         console.log(data)
+        console.log(data.items[0].volumeInfo.authors.toString())
+        console.log(data.items[0].volumeInfo.description.toString())
     })
 }
+
+
+/*Add in api ninja quotes url and key to use for 
+display a random quote on the starting page
+
+Need to handle error for when user doesnt input any data
+
+On form submit we should be redirected to a new html that has cards 
+displayed in 2 columns
+
+new html file needs to be created to display the searched books
+in the form of cards.
+cards should be displayed dynamicially with js and styled 
+with materialize
+
+Cards should display book title, cover, author, and description
+related to user input
+
+once application is fully functional, add cutom css to stylize
+
+
+
+*/
