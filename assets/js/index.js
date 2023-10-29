@@ -30,10 +30,11 @@ function searchBooks(input) {
     })
     //Parsed json data from the above returned promise will be stored in data
     .then(function(data) {
-        //Check the console to see what kind of information we get back
-        console.log(data)
-        console.log(data.items[0].volumeInfo.authors.toString())
-        console.log(data.items[0].volumeInfo.description.toString())
+        //Sets our searched data items into an array of objects in local storage for us to be able to grab by the key of'books' later
+        localStorage.setItem('books', JSON.stringify(data.items))
+        //When the user searches a book we are directed to the cards.html which is connected to the cards.js
+        window.location.href = "assets/html/cards.html"
+        
     })
 }
 
