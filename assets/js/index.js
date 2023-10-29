@@ -34,6 +34,9 @@ function searchBooks(input) {
         console.log(data)
         console.log(data.items[0].volumeInfo.authors.toString())
         console.log(data.items[0].volumeInfo.description.toString())
+        localStorage.setItem('books', JSON.stringify(data.items))
+        window.location.href = "assets/html/cards.html"
+        
     })
 }
 
