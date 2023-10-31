@@ -26,8 +26,8 @@ function searchBooks(input) {
     fetch(fullUrl)
     .then(function(resp) {
         //If the response is not an OK code a new Error will be thrown and caught at the end of the response chain, skipping any code between
-        if (!resp.ok) {
-            throw new Error(`yeet`)
+        if (!resp.ok || !input) {
+            throw new Error(`HTTP error! Status: ${resp.status}`)
         }
         //Returns the response in json format
         return resp.json()
@@ -42,7 +42,7 @@ function searchBooks(input) {
     })
     //Catches our thrown error and logs the error in the console
     .catch (function(err) {
-        console.error(err, 'yeeted')
+        console.error(err, "Could not fetch data")
     })
 }
 
