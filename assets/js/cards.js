@@ -22,12 +22,19 @@ document.addEventListener('DOMContentLoaded', function() {
         var bookThumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
         //Builds the card structure for each book. this should be updated with materailize classes to be cards
         cardsHTML += `
-        <div>
-            <img src="${bookThumbnail}">
-            <h3>${bookTitle}</h3>
-            <h5>-${bookAuthor}</h5>
-            <p>${bookDescription}</p>
+        <div class="row">
+            <div class="col s12 m12">
+                <div class="card-panel teal lighten-1">
+                    <img src="${bookThumbnail}">
+                    <span class="black-text">
+                        <h3>${bookTitle}</h3>
+                        <h5>-${bookAuthor}</h5>
+                        <p>${bookDescription}</p>
+                    </span>
+                </div>
+            </div>
         </div>
+
         `    
     })
     //Sets the HTML inside of our card container to the above cardsHTML for each book in our array
