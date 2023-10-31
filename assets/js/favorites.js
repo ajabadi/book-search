@@ -1,0 +1,1 @@
+console.log('youve reached the favorites page')

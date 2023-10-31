@@ -25,11 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="row">
             <div class="col s12 m12">
                 <div class="card-panel teal lighten-1">
-                    <img src="${bookThumbnail}">
-                    <span class="black-text">
-                        <h3>${bookTitle}</h3>
-                        <h5>-${bookAuthor}</h5>
-                        <p>${bookDescription}</p>
+                <img src="${bookThumbnail}">
+                <i class="small material-icons right library">add_circle</i>
+                <span class="black-text">
+                <h3>${bookTitle}</h3>
+                <h5>-${bookAuthor}</h5>
+                <p>${bookDescription}</p>
                     </span>
                 </div>
             </div>
