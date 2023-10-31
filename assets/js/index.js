@@ -25,6 +25,10 @@ function searchBooks(input) {
     //Makes an http request to Google Books
     fetch(fullUrl)
     .then(function(resp) {
+        //If the response is not an OK code a new Error will be thrown and caught at the end of the response chain, skipping any code between
+        if (!resp.ok) {
+            throw new Error(`yeet`)
+        }
         //Returns the response in json format
         return resp.json()
     })
@@ -35,6 +39,10 @@ function searchBooks(input) {
         //When the user searches a book we are directed to the cards.html which is connected to the cards.js
         window.location.href = "assets/html/cards.html"
         
+    })
+    //Catches our thrown error and logs the error in the console
+    .catch (function(err) {
+        console.error(err, 'yeeted')
     })
 }
 
