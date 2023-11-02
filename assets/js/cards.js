@@ -14,19 +14,39 @@ document.addEventListener('DOMContentLoaded', function() {
     books.forEach(function(book, index) {
         //Gets the title for each of the books
         var bookTitle = book.volumeInfo.title
+        //If theres no title to be found it shows this insead of undefined
+        if (!bookTitle) {
+            console.log("couldnt find book title on card " + index)
+            bookTitle = "No Found Title."
+        }
         //Gets the description for each of the books
         var bookDescription = book.volumeInfo.description
+        //If there is no description it shows this insead of undefined
+        if (!bookDescription) {
+            console.log("couldnt find book desription on card " + index)
+            bookDescription = "No Description Found."
+        }
         //Gets the author for each of the books
         var bookAuthor = book.volumeInfo.authors
+        ///If there is no author it shows this insead of undefined
+        if (!bookAuthor) {
+            console.log("couldnt find book author on card " + index)
+            bookAuthor = "No Known Author."
+        }
         //Gets the cover art for each book
         var bookThumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
+        //If there is no thumbnail it shows this insead of the stock no img 
+        if (!bookThumbnail) {
+            console.log("couldnt find book thumbnail on card " + index)
+            bookThumbnail = ''
+        }
         //Builds the card structure for each book. this should be updated with materailize classes to be cards
         cardsHTML += `
         <div class="row">
             <div class="col s12 m12">
-                <div class="card-panel teal lighten-1">
+                <div class="card-panel blue-grey darken-3">
                     <img src="${bookThumbnail}">
-                    <a class="btn-floating btn-medium waves-effect waves-light right library" data-id="${index}"><i class="material-icons">favorite_border</i></a>
+                    <a class="btn-floating btn-medium waves-effect waves-light blue-grey darken-1 right library" data-id="${index}"><i class="material-icons">favorite_border</i></a>
                     <span class="black-text">
                         <h3>${bookTitle}</h3>
                         <h5>-${bookAuthor}</h5>
