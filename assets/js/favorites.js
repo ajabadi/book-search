@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
         cardsHTML += `
         <div class="row">
             <div class="col s12 m12">
-                <div class="card-panel teal lighten-1">
+                <div class="card-panel blue-grey darken-3">
                     <img src="${bookThumbnail}">
-                    <a class="btn-floating btn-medium waves-effect waves-light right library" data-index ="${index}"><i class="material-icons">clear</i></a>
+                    <a class="btn-floating btn-medium waves-effect waves-light blue-grey darken-1 right library" data-index ="${index}"><i class="material-icons">clear</i></a>
                     <span class="black-text">
                         <h3>${bookTitle}</h3>
                         <h5>-${bookAuthor}</h5>
