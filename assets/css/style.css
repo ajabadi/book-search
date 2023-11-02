@@ -50,8 +50,7 @@ P {
 #book-input-field::placeholder{
     color:rgb(177, 177, 177);
 }
-
-
+/*Creates a hover effect on each favorite and remove button*/
 .library:hover {
     scale: 120%;
 }
