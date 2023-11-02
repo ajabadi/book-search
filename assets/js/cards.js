@@ -40,24 +40,31 @@ document.addEventListener('DOMContentLoaded', function() {
     })
     //Sets the HTML inside of our card container to the above cardsHTML for each book in our array
     cardContainer.innerHTML = cardsHTML
-
+    //Variable will select all the icon buttons
     var favoriteButtons = document.querySelectorAll('.library')
+    //For each of the favorite buttons we add an event listener
     favoriteButtons.forEach(function(button) {
         button.addEventListener('click', function(e) {
+            //ID is set above when we dynamicially update our cards, we set each card with index number as a data id
             var bookID = e.currentTarget.getAttribute('data-id')
             console.log(bookID)
             console.log('clicked')
+            //Calls function to add book to favorites by the index number 
             addBookToFavorites(bookID)
     
         })
     })
-
+    //The add to favorites function will take in the index number we set the book ID as
     function addBookToFavorites (bookID) {
         console.log(books)
+        //Varible for book by the array placement number we pass in 
         var book = books[bookID]
         console.log(book)
+        //Gets our favorite books or an empty array
         var favorites = JSON.parse(localStorage.getItem('favorites')) || []
+        //Adds the book by its array number
         favorites.push(book)
+        //Sets to current book into local storage to retrive from favorites page
         localStorage.setItem('favorites', JSON.stringify(favorites))
     }
 
