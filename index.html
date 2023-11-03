@@ -14,12 +14,15 @@
 </head>
 
 <body>
+    <!--Adds a navbar to rhe top of the page with a fixed position and materialize class to stylize-->
     <div class="navbar-fixed">
         <nav>
           <div class="nav-wrapper">
             <div class="brand-logo left">Book Looker</div>
             <ul id="nav" class="right">
+              <!--Brings us to the home page-->
               <li><a href="">Home</a></li>
+              <!--Brings us to the favorites page-->
               <li><a href="assets/html/favorites.html">Favorites</a></li>
             </ul>
           </div>
@@ -51,6 +54,20 @@
             </div>
         </div>
     </div>
+
+    <div id="modal1" class="modal open" tabindex="0" style="z-index: 1003; display: none; opacity: 1; top: 10%; transform: scaleX(1) scaleY(1);">
+      <div class="modal-content">
+        <h4>Please enter a search query</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+      </div>
+      <div class="modal-footer" style="width: 200px">
+        <a href="#!" class="modal-close waves-effect waves-red btn-flat" style="justify-content: center">Okay</a>
+      </div>
+    </div>
+
     <!--CDN link for the materialize js-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>    
     <!--link to custom javascript-->
