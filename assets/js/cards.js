@@ -82,10 +82,21 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log(book)
         //Gets our favorite books or an empty array
         var favorites = JSON.parse(localStorage.getItem('favorites')) || []
-        //Adds the book by its array number
-        favorites.push(book)
-        //Sets to current book into local storage to retrive from favorites page
-        localStorage.setItem('favorites', JSON.stringify(favorites))
+        //Checks if the book is already in favorites based on a unique identifier
+        var isBookInFavorites = favorites.some(function(favBook){
+            //Returns the value of the special ID of the favbook and the ID of the favbook
+            return favBook.id === book.id
+        })
+        //If the id check returns true then that means we already have the book in our local storage/favorites
+        if(isBookInFavorites) {
+            console.log('book already in favorites')
+        }
+        //If the book is not already in our favorites it can be added to localstorage
+        else {
+            //Adds the book by its array number
+            favorites.push(book)
+            //Sets to current book into local storage to retrive from favorites page
+            localStorage.setItem('favorites', JSON.stringify(favorites))
+        }
     }
-
 })
