@@ -10,12 +10,13 @@ var userInput = document.getElementById('book-input-field')
 var instance;
 //Calls our function to display random quotes on the inex.html
 displayQuote()
-//Adds an event listener of submit to the entire search form
+
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');
     instance = M.Modal.init(elems)[0];
     console.log (instance)
   });
+//Adds an event listener of submit to the entire search form
 searchForm.addEventListener('submit', function (e) {
     //Gets the value entered by the user in the input field
     var inputVal = userInput.value
@@ -25,12 +26,10 @@ searchForm.addEventListener('submit', function (e) {
     //Look in the console to see what value we are getting
     console.log(inputVal)
     //Calls the searchBooks function with a argument of the users input value
-    // searchBooks(inputVal)
-    instance.open();
-    // if (!inputVal) {
-    //     console.error ('Please enter a search query');
-    //     document.getElementById('modal1').style.display = 'block';
-    
+
+    if (!inputVal) {
+        instance.open();
+    }
 })
 
 
@@ -39,7 +38,7 @@ function searchBooks(input) {
     //Creates the full URL by concating user input and the API key to the base URL
     var fullUrl = gBooksURL + input + "&key=" + gBooksAPIKey
     //Makes an http request to Google Books
-    // fetch(fullUrl)
+    fetch(fullUrl)
     .then(function(resp) {
         //If the response is not an OK code a new Error will be thrown and caught at the end of the response chain, skipping any code between
         if (!resp.ok) {
