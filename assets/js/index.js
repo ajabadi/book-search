@@ -98,10 +98,17 @@ function displayQuote() {
         var author = data[0].author
         //Gets the quote info from our returned json data
         var quote = data[0].quote
-        //Appends the random quote to the html
-        quotePlacement.textContent = '"' + quote + '"'
-        //Appends the quotes author to the html
-        quoteAuthorPlacement.textContent = "-" + author
+        //If the quote length returned is less than 150 characters then we append the quote
+        if(quote.length < 160) {
+            //Appends the random quote to the html
+            quotePlacement.textContent = '"' + quote + '"'
+            //Appends the quotes author to the html
+            quoteAuthorPlacement.textContent = "-" + author
+        }
+        //Otherwise we recursively call displayQuote so that we can get a quote that is less than 150 characters
+        else {
+            displayQuote()
+        }
     })
     //Will catch our above error if the response is not OK
     .catch (function(err){

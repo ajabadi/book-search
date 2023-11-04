@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cardsHTML += `
         <div class="row">
             <div class="col s12 m12">
-                <div class="card-panel blue-grey darken-3 z-depth-3">
+                <div class="card-panel blue-grey darken-3 z-depth-5">
                     <div class="switch center">
                         <label class>
                             To Read
