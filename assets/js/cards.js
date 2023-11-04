@@ -10,6 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
     cardContainer.innerHTML = ''
     //Creates an empty string to hold the HTML for the book cards
     var cardsHTML = ''
+    //Gets our favorite books from local storage or an empty array
+    var favorites = JSON.parse(localStorage.getItem('favorites')) || []
     //Iterates over the array of books
     books.forEach(function(book, index) {
         //Gets the title for each of the books
@@ -40,13 +42,22 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("couldnt find book thumbnail on card " + index)
             bookThumbnail = ''
         }
+           // Checks if the book is already in favorites
+           var isBookInFavorites = favorites.some(function(favBook){
+            return favBook.id === book.id
+        })
+         //Sets the icon to full or outlined heart 
+         var favoriteIcon = isBookInFavorites ? "favorite" : "favorite_border"
+
         //Builds the card structure for each book. this should be updated with materailize classes to be cards
         cardsHTML += `
         <div class="row">
             <div class="col s12 m12">
                 <div class="card-panel blue-grey darken-3">
                     <img src="${bookThumbnail}">
-                    <a class="btn-floating btn-medium waves-effect waves-light blue-grey darken-1 right library" data-id="${index}"><i class="material-icons">favorite_border</i></a>
+                    <a class="btn-floating btn-medium waves-effect waves-light blue-grey darken-1 right library" data-id="${index}">
+                        <i class="material-icons">${favoriteIcon}</i>
+                    </a>
                     <span class="black-text">
                         <h3>${bookTitle}</h3>
                         <h5>-${bookAuthor}</h5>
@@ -70,12 +81,12 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(bookID)
             console.log('clicked')
             //Calls function to add book to favorites by the index number 
-            addBookToFavorites(bookID)
+            addBookToFavorites(bookID, e)
     
         })
     })
-    //The add to favorites function will take in the index number we set the book ID as
-    function addBookToFavorites (bookID) {
+    //The add to favorites function will take in the index number we set the book ID as and takes in an event
+    function addBookToFavorites (bookID, e) {
         console.log(books)
         //Varible for book by the array placement number we pass in 
         var book = books[bookID]
@@ -97,6 +108,10 @@ document.addEventListener('DOMContentLoaded', function() {
             favorites.push(book)
             //Sets to current book into local storage to retrive from favorites page
             localStorage.setItem('favorites', JSON.stringify(favorites))
+            //Console logs what are event target is
+            console.log(e.target)
+            //when the event target gets clicked it sets the text content to favorite
+            e.target.textContent = "favorite"
         }
     }
 })
