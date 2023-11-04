@@ -26,6 +26,8 @@ searchForm.addEventListener('submit', function (e) {
     //Look in the console to see what value we are getting
     console.log(inputVal)
     //Calls the searchBooks function with a argument of the users input value
+    searchBooks(inputVal)
+
 
     if (!inputVal) {
         instance.open();
