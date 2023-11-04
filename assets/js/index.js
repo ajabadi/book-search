@@ -6,16 +6,19 @@ var gBooksAPIKey = "AIzaSyAB-DMWo1SEDPqiD8Ihs-wgBnfsUTn9DRo"
 var searchForm = document.getElementById('search-form')
 //Selects the text input field where the user will enter their unput
 var userInput = document.getElementById('book-input-field')
-
-var instance;
+//Creastes an instance variable to use with our modal
+var instance
 //Calls our function to display random quotes on the inex.html
 displayQuote()
-
+//Adds an event listener to wait for all content to load before rendering
 document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.modal');
-    instance = M.Modal.init(elems)[0];
+    //Selects all modal classes
+    var elems = document.querySelectorAll('.modal')
+    //Sets our instance value to the modal initiation
+    instance = M.Modal.init(elems)[0]
+    //Logs the instance for reference
     console.log (instance)
-  });
+  })
 //Adds an event listener of submit to the entire search form
 searchForm.addEventListener('submit', function (e) {
     //Gets the value entered by the user in the input field
@@ -27,14 +30,12 @@ searchForm.addEventListener('submit', function (e) {
     console.log(inputVal)
     //Calls the searchBooks function with a argument of the users input value
     searchBooks(inputVal)
-
-
+    //If the user doest input a value 
     if (!inputVal) {
-        instance.open();
+        //Modal will open and tell the user to input a book or author 
+        instance.open()
     }
 })
-
-
 //Function to search for books using Google Books API based on user input
 function searchBooks(input) {
     //Creates the full URL by concating user input and the API key to the base URL

@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             //Updates the read status in local storage
             readStatus[index] = e.currentTarget.checked
             localStorage.setItem('readStatus', JSON.stringify(readStatus))
-        });
-    });
+        })
+    })
 
 })
