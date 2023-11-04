@@ -68,7 +68,7 @@ function searchBooks(input) {
 //Function to display random quotes on the inex.html
 function displayQuote() {
     //Varibale to store our category for the quotes api to use
-    var category = "education"
+    var category = "knowledge"
     //Fetches our url with the applied parameters
     fetch('https://api.api-ninjas.com/v1/quotes?category=' + category, {
         method: 'GET',
