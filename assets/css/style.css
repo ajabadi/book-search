@@ -54,3 +54,7 @@ P {
 .library:hover {
     scale: 120%;
 }
+
+.switch {
+    margin-bottom: 2vh;
+}
