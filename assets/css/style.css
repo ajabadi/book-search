@@ -93,3 +93,13 @@ P {
 #cardTitle, #authorCard {
     color: beige;
 }
+
+button:hover {
+ background-color: beige;
+}
+
+button {
+    font-size: 30px;
+    animation: my-animation 3s ease-out;
+}
+
