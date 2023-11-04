@@ -18,6 +18,13 @@ P {
     margin: 0;
 
 }
+#quote-placement, #quote-author {
+    color: beige;
+}
+/* Styling the Anchor text for logo*/
+#logo {
+    color: beige;
+}
 /*Styles the whole hero section*/
 .hero-section {
     position: relative;
@@ -80,7 +87,7 @@ P {
   font-size: 60px;
   color: beige;
 }
-
+/* key frames animation for the logo text*/
 @keyframes my-animation {
   0% {
     opacity: 0;
@@ -90,6 +97,7 @@ P {
   }
 }
 
+/* Styling of text in the cards*/
 #cardTitle, #authorCard {
     color: beige;
 }
@@ -98,6 +106,7 @@ button:hover {
  background-color: beige;
 }
 
+/* animation for the button*/
 button {
     font-size: 30px;
     animation: my-animation 3s ease-out;
