@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         //Gets the cover art for each book
         var bookThumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
         // Determine if the book is marked as read
-        var isRead = readStatus[index]
+        var isRead = readStatus[index] || false
         //Sets the dynamic Html for our cards 
         cardsHTML += `
         <div class="row">
