@@ -57,6 +57,8 @@ function searchBooks(input) {
         }
         //Sets our searched data items into an array of objects in local storage for us to be able to grab by the key of'books' later
         localStorage.setItem('books', JSON.stringify(data.items))
+        //Sets our userinput into local storage to use on the cards page for showing results 
+        localStorage.setItem('user-input', JSON.stringify(userInput.value))
         //When the user searches a book we are directed to the cards.html which is connected to the cards.js
         window.location.href = "assets/html/cards.html"
         
