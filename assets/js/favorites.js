@@ -13,12 +13,36 @@ document.addEventListener('DOMContentLoaded', function() {
     favorites.forEach(function(book, index) {
         //Gets the title for each of the books
         var bookTitle = book.volumeInfo.title
+        //If theres no title to be found it shows this insead of undefined
+        if (!bookTitle) {
+            console.log("couldnt find book title on card " + index)
+            bookTitle = "No Found Title."
+        }
         //Gets the description for each of the books
         var bookDescription = book.volumeInfo.description
+        //If there is no description it shows this insead of undefined
+        if (!bookDescription) {
+            console.log("couldnt find book desription on card " + index)
+            bookDescription = "No Description Found."
+        }
         //Gets the author for each of the books
         var bookAuthor = book.volumeInfo.authors
+         ///If there is no author it shows this insead of undefined
+        if (!bookAuthor) {
+            console.log("couldnt find book author on card " + index)
+            bookAuthor = "No Known Author."
+        }
         //Gets the cover art for each book
         var bookThumbnail = book.volumeInfo.imageLinks && book.volumeInfo.imageLinks.thumbnail
+        //If there is no thumbnail it shows this insead of the stock no img 
+        if (!bookThumbnail) {
+            console.log("couldnt find book thumbnail on card " + index)
+            bookThumbnail = ''
+        }
+        //Replaces the thumbnails url from http to https
+        else {
+            bookThumbnail = bookThumbnail.replace(/^http:/, 'https:')
+        }
         // Determine if the book is marked as read
         var isRead = readStatus[index] || false
         //Sets the dynamic Html for our cards 
