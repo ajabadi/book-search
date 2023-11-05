@@ -49,10 +49,6 @@ All of our websites functionality is being handled in Javascript. Throughout the
 
 ![Landng page](assets/images/final-main.png)
 
-- Short Video previewing functionality.
-
-<video src="assets/videos/functionality-video.mp4" controls title="Title"></video>
-
 ## Website Link 
 [Book Looker](https://empireantz.github.io/book-search/)
 
