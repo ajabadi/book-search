@@ -1,5 +1,11 @@
 //Variable books will hold data we get from what we stored in local storage in our index.js
 var books = JSON.parse(localStorage.getItem('books'))
+//Selects the area in the html for us to append the showing results for and then userinput
+var userSearchResults = document.querySelector('.search-display')
+//Gets the userinput we saved from our search
+var storedInput = JSON.parse(localStorage.getItem('user-input'))
+//Appends the userinput onto the page in the following string
+userSearchResults.textContent = "Showing results for " + '"'+ storedInput + '"'
 // This event listener will wait until the document's content has fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     //Console will give us our array of object to traverse
