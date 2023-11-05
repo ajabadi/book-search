@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function() {
         //Appends the generated cards to the cards container
         cardContainer.innerHTML = cardsHTML
     })
+    var noCardsHTML = document.getElementById('oops')
+    if (favorites.length === 0) {
+        noCardsHTML.style.display = "block"
+    }
     //Selects all our buttons on each card
     document.querySelectorAll('.library').forEach(function(button) {
         //Adds a click listener to each button 
@@ -65,7 +69,8 @@ document.addEventListener('DOMContentLoaded', function() {
             //Live reloads to show card has been deleted
             location.reload()
         })
-    })    
+    })
+        
 
     // Selects all toggle switches on each card and iterates over them 
     document.querySelectorAll('.switch input[type="checkbox"]').forEach(function(toggle) {
@@ -78,5 +83,4 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('readStatus', JSON.stringify(readStatus))
         })
     })
-
 })
