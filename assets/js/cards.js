@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         cardsHTML += `
         <div class="row">
             <div class="col s12 m12">
-                <div class="card-panel blue-grey darken-3">
+                <div class="card-panel blue-grey darken-3 z-depth-5">
                     <img src="${bookThumbnail}">
                     <a class="btn-floating btn-medium waves-effect waves-light blue-grey darken-1 right library" data-id="${index}">
                         <i class="material-icons">${favoriteIcon}</i>
