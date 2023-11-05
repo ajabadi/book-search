@@ -42,6 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("couldnt find book thumbnail on card " + index)
             bookThumbnail = ''
         }
+        else {
+            bookThumbnail = bookThumbnail.replace(/^http:/, 'https:')
+        }
            // Checks if the book is already in favorites
            var isBookInFavorites = favorites.some(function(favBook){
             return favBook.id === book.id
