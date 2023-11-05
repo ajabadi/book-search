@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log("couldnt find book thumbnail on card " + index)
             bookThumbnail = ''
         }
+        //Replaces the thumbnails url from http to https
         else {
             bookThumbnail = bookThumbnail.replace(/^http:/, 'https:')
         }
