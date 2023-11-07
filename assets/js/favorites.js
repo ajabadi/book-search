@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <i class="material-icons">clear</i>
                     </a>
                     <span class="black-text">
-                        <h3 id="cardTitle">${bookTitle}</h3>
+                        <h3 id="cardTitle">${bookTitle}</h3> 
                         <h5 id="authorCard">-${bookAuthor}</h5>
                         <p>${bookDescription}</p>
                     </span>
