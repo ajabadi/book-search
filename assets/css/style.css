@@ -1,6 +1,4 @@
-/* Fonts for Landing page
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500@Cormorant+Garamond:wght@500&family=Kalam:wght@400&family=Philosopher:ital@1&family=Pixelify+Sans&family=Roboto:ital,wght@0,300;1,300;1,500&family=Secular+One&display=swap');
-*/
+
 /* Sets the background color for the entire page*/
 body {
     background-color: rgb(47, 63, 61);
@@ -98,7 +96,7 @@ P {
 }
 
 /* Styling of text in the cards*/
-#cardTitle, #authorCard {
+.cardTitle, .authorCard {
     color: beige;
 }
 
@@ -109,6 +107,6 @@ button:hover {
 /* animation for the button*/
 button {
     font-size: 30px;
-    animation: my-animation 3s ease-out;
+    animation: my-animation 1s ease-out;
 }
 
