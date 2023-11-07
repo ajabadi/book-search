@@ -125,8 +125,3 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 })
-var logo = document.getElementsByClassName("brand-logo")[0];
-function goHome() {
-    window.location.href = '../../index.html';
-}
-logo.addEventListener('click', goHome);
