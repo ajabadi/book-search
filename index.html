@@ -9,8 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--Link to custom css stylesheet-->
     <link rel="stylesheet" href="assets/css/style.css">
+    <!--Adds a favicon logo to the tab-->
+    <link rel="icon" type="image/png" href ="assets/images/favicon-16x16.png">
 
-    <title>Book Looker</title>
+    <title>Blooker</title>
   </head>
 
   <body>
@@ -18,7 +20,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper blue-grey darken-2">
-          <div class="brand-logo left"><a class="logo" href="./index.html">BookLooker</a></div>
+          <div class="brand-logo left"><a class="logo" href="./index.html"><span class = "bl-style">BL</span>ooker</a></div>
           <ul id="nav" class="right">
             <!--Brings us to the home page-->
             <li><a href="">Home</a></li>
@@ -49,11 +51,7 @@
               placeholder="The Fellowship of the Ring..."
             />
             <!--materialize classes add the styling to the button-->
-            <button
-              id="search-btn"
-              class="btn waves-effect waves-light blue-grey darken-1 btn-large"
-              type="submit"
-              name="action"
+            <button id="search-btn" class="btn waves-effect waves-light blue-grey darken-1 btn-large" type="submit" name="action"
             >
               Search
               <!--icon on the button-->
