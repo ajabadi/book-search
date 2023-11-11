@@ -54,10 +54,12 @@ P {
     margin-top: 10vh;/*sets a margin top and bottom to sepatate the quote from the input field and header*/
     margin-bottom: 10vh;
     font-size: 2vh;
+    animation: my-animation 2s ease-out;
 }
 /*styles the font for the input*/
 #book-input-field {
     color: var(--white);
+    animation: my-animation 2s ease-out;
 }
 /*styles the placeholder font for the input field*/
 #book-input-field::placeholder{
@@ -79,7 +81,10 @@ P {
 
 /* animation for the logo text*/
 .logo {
-  animation: my-animation 3s ease-in-out;
+  animation: my-animation 1s ease-in-out;
+  margin-left: 1vh;
+  font-size: 3vh;
+  color: var(--beige);
 }
 
 /* key frames animation for the logo text*/
@@ -93,16 +98,19 @@ P {
 }
 
 /* Styling of text in the cards*/
-.cardTitle, .authorCard, .logo {
+.cardTitle, .authorCard {
     color: var(--beige);
 }
 
 button:hover {
-    scale: 110%;
+    scale: 105%;
 }
 
-/* animation for the button*/
-button {
-    animation: my-animation 1s ease-out;
+#search-btn {
+    animation: my-animation 2s ease-out;
 }
 
+.bl-style {
+    background-color: black;
+    color: var(--beige)
+}
