@@ -1,3 +1,6 @@
+//Variable to change the color of the text when the user is inputing the name of the book
+var searchForm= document.getElementById('book-input-field')
+searchForm.classList.add('black-text')
 //Variable books will hold data we get from what we stored in local storage in our index.js
 var books = JSON.parse(localStorage.getItem('books'))
 //Selects the area in the html for us to append the showing results for and then userinput
@@ -125,3 +128,4 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 })
+
