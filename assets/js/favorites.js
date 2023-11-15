@@ -1,3 +1,6 @@
+//Variable to change the color of the text when the user is inputing the name of the book
+var searchForm= document.getElementById('book-input-field')
+searchForm.classList.add('black-text')
 //Gets our favorites books from local storage
 var favorites = JSON.parse(localStorage.getItem('favorites')) || []
 //Gets our read status from local storage as true or false
@@ -108,3 +111,4 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 })
+
